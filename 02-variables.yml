@@ -25,14 +25,6 @@
 
 # Since the variable is declared at task level, then the only one task can access that variable.
 
-# The same variable can be declared from command line using -e option
-# Now the variable precedence will come into picture
-# 1. Command line level
-# 2. Task level
-# 3. Play Level
-# 4. Inventory level
-# . Error saying variable does not declared
-
 ## Variable data types
 # 1. String
 # 2. Number
@@ -70,5 +62,23 @@
     - name: Print url
       ansible.builtin.debug:
         msg: x - {{ x }} , y - {{ y[0] }}, z - {{ z["domain"] }}
+
+
+# The same variable can be declared from command line using -e option
+# Now the variable precedence will come into picture
+# 1. Command line level
+# 2. Task level
+# 3. Roles Level
+# 4. Play Level
+# 5. Inventory level
+# 6. Error saying variable does not declared
+
+
+# If our value is starting with a variable then we require quotes
+# msg: {{ URL }}   -> This require quotes
+# msg: url - {{ URL }}   -> This does not require quotes
+
+
+
 
 
