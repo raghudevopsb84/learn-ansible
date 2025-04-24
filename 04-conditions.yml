@@ -22,7 +22,7 @@
     - name: Number comparision
       ansible.builtin.debug:
         msg: "{{ countx }} is greater than 0"
-      when: countx > 0
+      when: countx | int > 0
 
 
 
