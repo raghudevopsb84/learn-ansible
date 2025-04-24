@@ -23,7 +23,7 @@
       ansible.builtin.debug:
         msg: "{{ countx }} is greater than 0"
       when: countx | int > 0
-
+      # | int is making sure it is a number
 
 
 
