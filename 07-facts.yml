@@ -7,5 +7,5 @@
         msg: "{{ ansible_virtualization_type }}"
 
     - name: Print IP
-       ansible.builtin.debug:
-         msg: "{{ ansible_default_ipv4 }}"
+      ansible.builtin.debug:
+        msg: "{{ ansible_default_ipv4 }}"
